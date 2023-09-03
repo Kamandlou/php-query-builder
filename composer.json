@@ -1,0 +1,29 @@
+{
+  "name": "kamandlou/php-query-builder",
+  "description": "A sql query builder for PHP",
+  "homepage": "https://github.com/Kamandlou/php-query-builder",
+  "keywords": [
+    "query builder",
+    "sql",
+    "database",
+    "mysql",
+    "postgresql",
+    "sqlite"
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "autoload": {
+    "psr-4": {
+      "Kamandlou\\PhpQueryBuilder\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Kamandlou",
+      "email": "ahkamandlou@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "8.*"
+  }
+}
