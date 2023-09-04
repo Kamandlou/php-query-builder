@@ -44,7 +44,7 @@ class Select implements Countable
             $this->sql .= " WHERE";
         }
         foreach ($this->wheres as $where) {
-            $this->sql .= " {$where}";
+            $this->sql .= " $where";
             $this->bindValues[] = $where->value;
         }
         return $this;
