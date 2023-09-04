@@ -11,13 +11,13 @@ class Where
         protected string $column,
         protected string $operator,
         public mixed     $value,
-        protected string $conjunction = self::AND_CONJUNCTION
+        public string    $conjunction = self::AND_CONJUNCTION
     )
     {
     }
 
     public function __toString()
     {
-        return "$this->conjunction $this->column $this->operator ?";
+        return "$this->column $this->operator ?";
     }
 }
