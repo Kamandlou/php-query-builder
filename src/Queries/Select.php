@@ -88,6 +88,12 @@ class Select implements Countable
         return $this->orderBy($column, 'DESC');
     }
 
+    public function orderByRand(): Select
+    {
+        $this->orderBy = " ORDER BY RAND()";
+        return $this;
+    }
+
     public function count(): int
     {
         return 0;
