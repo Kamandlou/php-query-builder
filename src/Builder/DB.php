@@ -16,9 +16,9 @@ class DB extends Singleton
 
     /** If a query errors, this determines how to handle it */
     protected bool $exceptionOnError = false;
-    protected int $fetchMode = PDO::FETCH_DEFAULT;
+    public int $fetchMode = PDO::FETCH_DEFAULT;
 
-    public function __construct(protected PDO $pdo)
+    public function __construct(public PDO $pdo)
     {
         // if exceptions are already activated in PDO, activate them in Fluent as well
         if ($this->pdo->getAttribute(PDO::ATTR_ERRMODE) === PDO::ERRMODE_EXCEPTION) {
