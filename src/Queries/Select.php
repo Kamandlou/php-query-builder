@@ -38,21 +38,32 @@ class Select implements Countable
         return $this;
     }
 
-    public function prepare(): Select
+    protected function prepare()
     {
         if (count($this->wheres)) {
             $this->sql .= " WHERE";
         }
-        foreach ($this->wheres as $where) {
-            $this->sql .= " $where";
+        foreach ($this->wheres as $index => $where) {
+            if ($index) {
+                $this->sql .= " $where->conjunction $where";
+            } else {
+                $this->sql .= " $where";
+            }
             $this->bindValues[] = $where->value;
         }
-        return $this;
     }
 
     public function toSql(): string
     {
+        $this->prepare();
         return $this->sql;
+    }
+
+    public function fetch(): mixed
+    {
+        $stmt = $this->db->pdo->prepare($this->toSql());
+        $stmt->execute($this->bindValues);
+        return $stmt->fetch($this->db->fetchMode);
     }
 
     public function count(): int
