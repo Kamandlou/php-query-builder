@@ -38,7 +38,7 @@ class Select implements Countable
         return $this;
     }
 
-    protected function prepare()
+    protected function prepare(): void
     {
         if (count($this->wheres)) {
             $this->sql .= " WHERE";
@@ -66,7 +66,7 @@ class Select implements Countable
         return $stmt->fetch($this->db->fetchMode);
     }
 
-    public function get(): mixed
+    public function get(): array|bool
     {
         $stmt = $this->db->pdo->prepare($this->toSql());
         $stmt->execute($this->bindValues);
