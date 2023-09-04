@@ -66,6 +66,13 @@ class Select implements Countable
         return $stmt->fetch($this->db->fetchMode);
     }
 
+    public function fetchAll(): mixed
+    {
+        $stmt = $this->db->pdo->prepare($this->toSql());
+        $stmt->execute($this->bindValues);
+        return $stmt->fetchAll($this->db->fetchMode);
+    }
+
     public function count(): int
     {
         return 0;
