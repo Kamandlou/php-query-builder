@@ -59,14 +59,14 @@ class Select implements Countable
         return $this->sql;
     }
 
-    public function fetch(): mixed
+    public function first(): mixed
     {
         $stmt = $this->db->pdo->prepare($this->toSql());
         $stmt->execute($this->bindValues);
         return $stmt->fetch($this->db->fetchMode);
     }
 
-    public function fetchAll(): mixed
+    public function get(): mixed
     {
         $stmt = $this->db->pdo->prepare($this->toSql());
         $stmt->execute($this->bindValues);
