@@ -13,6 +13,7 @@ class Select implements Countable
     protected array $wheres = [];
     protected array $bindValues = [];
     protected string $sql;
+    protected string $orderBy = '';
 
     /**
      * @throws Exception
@@ -51,6 +52,9 @@ class Select implements Countable
             }
             $this->bindValues[] = $where->value;
         }
+        if ($this->orderBy) {
+            $this->sql .= $this->orderBy;
+        }
     }
 
     public function toSql(): string
@@ -71,6 +75,17 @@ class Select implements Countable
         $stmt = $this->db->pdo->prepare($this->toSql());
         $stmt->execute($this->bindValues);
         return $stmt->fetchAll($this->db->fetchMode);
+    }
+
+    public function orderBy(string $column, string $direction = 'ASC'): Select
+    {
+        $this->orderBy = " ORDER BY $column $direction";
+        return $this;
+    }
+
+    public function orderByDesc(string $column): Select
+    {
+        return $this->orderBy($column, 'DESC');
     }
 
     public function count(): int
