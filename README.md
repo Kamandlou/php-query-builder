@@ -24,6 +24,25 @@ $db = DB::connection($pdo);
 ```php
 $db = DB::connection($pdo)->setFetchMode(PDO::FETCH_ASSOC);
 ```
+
+## DB Class Methods
+`setPrefix(string $prefix)`
+
+Set a prefix to be added to all table names.
+
+```php
+$db->setPrefix('db');
+```
+
+`setSeparator(string $separator)`
+
+Set the separator character used when building queries.
+
+```php
+$db->setPrefix('db')->setSeparator('_'); // Result: db_tableName
+```
+
+
 ## CRUD Query Examples
 
 ##### SELECT
