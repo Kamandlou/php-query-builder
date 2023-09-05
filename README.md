@@ -100,3 +100,10 @@ Execute the query and return all result rows.
 ```php
 $users = $db->table('users')->select('id', 'name')->where('id', '>', 100)->get();
 ```
+
+`orderBy(string $column, string $direction = 'ASC')`
+
+Set the ORDER BY clause for the query.
+```php
+$users = $db->table('users')->select('id', 'name', 'age')->orderBy('age', 'DESC')->get();
+```
