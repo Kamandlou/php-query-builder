@@ -91,5 +91,12 @@ echo $sql;
 
 Execute the query and return the first result row.
 ```php
-$user = $db->table('users')->select('id', 'name')->where('id', 5)->first();
+$user = $db->table('users')->select('id', 'name')->where('id', '=', 5)->first();
+```
+
+`get()`
+
+Execute the query and return all result rows.
+```php
+$users = $db->table('users')->select('id', 'name')->where('id', '>', 100)->get();
 ```
