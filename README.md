@@ -9,7 +9,7 @@ PHP SQL query builder using PDO. It's a quick and light library.
 
 ## Installation
 ### Composer
-The preferred way to install PHP Query Bcomposer require kamandlou/php-query-builderuilder is via [composer](http://getcomposer.org/).
+The preferred way to install PHP Query Builder is via [composer](http://getcomposer.org/).
 
 Run this command for installing the PHP Query Builder:
 ```
