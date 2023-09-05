@@ -107,3 +107,10 @@ Set the ORDER BY clause for the query.
 ```php
 $users = $db->table('users')->select('id', 'name', 'age')->orderBy('age', 'DESC')->get();
 ```
+
+`orderByDesc(string $column)`
+
+Set the ORDER BY clause to sort by a column in descending order.
+```php
+$users = $db->table('users')->select('id', 'name', 'age')->orderByDesc('age')->get();
+```
