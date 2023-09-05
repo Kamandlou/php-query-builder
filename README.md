@@ -15,7 +15,11 @@ Run this command for installing the PHP Query Builder:
 ```bash
 composer require kamandlou/php-query-builder
 ```
-
+## Make a connection
+```php
+$pdo = new PDO('mysql:host=localhost;dbname=test', 'user', 'password');
+$db = DB::connection($pdo);
+```
 ## CRUD Query Examples
 
 ##### SELECT
