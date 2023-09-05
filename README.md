@@ -22,7 +22,7 @@ $db = DB::connection($pdo);
 ```
 ### Set fetch mode
 ```php
-$db = DB::connection($pdo)->setFetchMode(PDO::FETCH_ASSOC)
+$db = DB::connection($pdo)->setFetchMode(PDO::FETCH_ASSOC);
 ```
 ## CRUD Query Examples
 
