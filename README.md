@@ -78,3 +78,11 @@ $db->select()->orWhere('age', '>', 18);
 - `$column` - The column name to compare against.
 - `$operator` - Comparison operator (>, <, =, <>, etc).
 - `$value` - The value to compare the column against.
+
+`toSql()`
+
+Get the generated SQL query string.
+```php
+$sql = $db->select()->orWhere('age', '>', 18)->toSql();
+echo $sql;
+```
