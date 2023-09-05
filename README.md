@@ -117,3 +117,10 @@ Set the ORDER BY clause to sort by a column in descending order.
 $users = $db->table('users')->select('id', 'name', 'age')->orderByDesc('age')->get();
 ```
 - `$column` - Name of column to sort by.
+
+`orderByRand()`
+
+Set the ORDER BY to random order.
+```php
+$users = $db->table('users')->select()->orderByRand()->get();
+```
