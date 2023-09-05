@@ -20,6 +20,10 @@ composer require kamandlou/php-query-builder
 $pdo = new PDO('mysql:host=localhost;dbname=test', 'user', 'password');
 $db = DB::connection($pdo);
 ```
+### Set fetch mode
+```php
+$db = DB::connection($pdo)->setFetchMode(PDO::FETCH_ASSOC)
+```
 ## CRUD Query Examples
 
 ##### SELECT
