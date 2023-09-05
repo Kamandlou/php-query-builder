@@ -86,3 +86,10 @@ Get the generated SQL query string.
 $sql = $db->select()->orWhere('age', '>', 18)->toSql();
 echo $sql;
 ```
+
+`first()`
+
+Execute the query and return the first result row.
+```php
+$user = $db->table('users')->select('id', 'name')->where('id', 5)->first();
+```
