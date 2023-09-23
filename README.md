@@ -151,3 +151,15 @@ Set the ORDER BY to random order.
 ```php
 $users = $db->table('users')->select()->orderByRand()->get();
 ```
+
+`count()`
+
+Get the count of the records.
+```php
+$count = $db->table('users')->select()
+    ->where('id','>',3)
+    ->where('id', '<', 100000)
+    ->count();
+// OR
+$count = $db->table('users')->select()->count();
+```
