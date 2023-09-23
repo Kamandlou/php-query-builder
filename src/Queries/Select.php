@@ -96,6 +96,7 @@ class Select implements Countable
 
     public function count(): int
     {
-        return 0;
+        $this->sql = 'SELECT COUNT(*) AS `count` FROM ' . $this->db->getFullTableName();
+        return $this->first()['count'];
     }
 }
